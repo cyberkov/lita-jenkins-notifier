@@ -40,7 +40,7 @@ module Lita
                 phase = build[:phase]
                 number = build[:number]
                 status = build[:status]
-                branch = build[:parameters][:branch]
+                branch = build[:scm][:branch]
                 full_url = build[:full_url]
 
                 if phase == "STARTED"
