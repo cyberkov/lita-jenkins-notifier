@@ -6,7 +6,7 @@ SimpleCov.formatters = [
 ]
 SimpleCov.start { add_filter '/spec/' }
 
-require 'lita_jenkins_notifier'
+require 'lita-jenkins-notifier'
 require 'lita/rspec'
 
 Lita.version_3_compatibility_mode = false
