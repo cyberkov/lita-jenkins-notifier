@@ -50,7 +50,7 @@ module Lita
                        'FAILING'
                      elsif status == 'NOT_BUILT'
                        'NOT BUILT'
-                       end
+                     end
             "[Jenkins] [STILL #{phrase}] Build ##{number} Completed for #{name} on #{branch}: #{full_url}"
           else
             @job_statuses[name] = status

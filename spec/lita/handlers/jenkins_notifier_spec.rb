@@ -16,7 +16,9 @@ describe Lita::Handlers::JenkinsNotifier, lita_handler: true do
 
     # phase: STARTED, COMPLETED, FINISHED
     # status: ABORTED, FAILURE, NOT_BUILT, SUCCESS, UNSTABLE
+    # rubocop:disable Metrics/MethodLength
     def jenkins_payload(job_name, build_number, phase, status, branch)
+      # rubocop:enable Metrics/MethodLength
       <<-DATA.chomp
 {"name":"#{job_name}",
  "url":"JobUrl",
