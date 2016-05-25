@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Lita::Handlers::JenkinsNotifier, lita_handler: true do
 
-    it { routes_http(:post, "/jenkins/notifications").to(:build_notification) }
+    it { is_expected.to route_http(:post, "/jenkins/notifications").to(:build_notification) }
 
     describe "#build_notification" do
         let(:request) do
@@ -23,11 +23,12 @@ describe Lita::Handlers::JenkinsNotifier, lita_handler: true do
  "url":"JobUrl",
  "build":{
       "number":#{build_number},
-	  "phase":"#{phase}",
-	  "status":"#{status}",
+      "phase":"#{phase}",
+      "status":"#{status}",
       "url":"job/project/5",
       "full_url":"http://ci.jenkins.org/job/project/5",
-      "parameters":{"branch":"#{branch}"}
+      "scm":{"branch":"#{branch}"},
+      "artifacts": { }
 	 }
 }
             DATA

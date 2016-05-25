@@ -7,9 +7,7 @@ module Lita
                 @job_statuses = {}
             end
 
-            def self.default_config(config)
-                config.jobs = {}
-            end
+            config :jobs, default: {}
 
             http.post "/jenkins/notifications", :build_notification
 
